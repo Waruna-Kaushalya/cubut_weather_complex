@@ -30,21 +30,18 @@ class WeatherAppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return BlocBuilder<ThemeCubit, Color>(
-      builder: (context, color) {
-        return MaterialApp(
-          theme: ThemeData(
-            primaryColor: color,
-            textTheme: GoogleFonts.rajdhaniTextTheme(),
-            appBarTheme: AppBarTheme(
-              titleTextStyle: GoogleFonts.rajdhaniTextTheme(textTheme)
-                  .apply(bodyColor: Colors.white)
-                  .headline6,
-            ),
-          ),
-          home: WeatherPage(),
-        );
-      },
+    // final counterState = context.watch<ThemeCubit>().state;
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: context.watch<ThemeCubit>().state,
+        textTheme: GoogleFonts.rajdhaniTextTheme(),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: GoogleFonts.rajdhaniTextTheme(textTheme)
+              .apply(bodyColor: Colors.white)
+              .headline6,
+        ),
+      ),
+      home: const WeatherPage(),
     );
   }
 }

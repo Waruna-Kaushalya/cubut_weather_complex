@@ -21,9 +21,6 @@ class WeatherState extends Equatable {
   final Weather weather;
   final TemperatureUnits temperatureUnits;
 
-  factory WeatherState.fromJson(Map<String, dynamic> json) =>
-      _$WeatherStateFromJson(json);
-
   WeatherState copyWith({
     WeatherStatus? status,
     TemperatureUnits? temperatureUnits,
@@ -35,6 +32,9 @@ class WeatherState extends Equatable {
       weather: weather ?? this.weather,
     );
   }
+
+  factory WeatherState.fromJson(Map<String, dynamic> json) =>
+      _$WeatherStateFromJson(json);
 
   Map<String, dynamic> toJson() => _$WeatherStateToJson(this);
 

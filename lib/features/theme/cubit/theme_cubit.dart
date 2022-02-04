@@ -26,13 +26,13 @@ extension on Weather {
   Color get toColor {
     switch (condition) {
       case WeatherCondition.clear:
-        return Colors.orangeAccent;
+        return Colors.orange;
       case WeatherCondition.snowy:
-        return Colors.lightBlueAccent;
+        return Colors.blue;
       case WeatherCondition.cloudy:
-        return Colors.blueGrey;
+        return Colors.green;
       case WeatherCondition.rainy:
-        return Colors.indigoAccent;
+        return Colors.purple;
       case WeatherCondition.unknown:
       default:
         return ThemeCubit.defaultColor;
